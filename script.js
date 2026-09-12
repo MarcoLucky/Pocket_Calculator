@@ -9,6 +9,9 @@ let shouldResetDisplay = false;
 
 function updateDisplay() {
   display.textContent = currentValue;
+  display.classList.remove("is-updated");
+  void display.offsetWidth;
+  display.classList.add("is-updated");
   expression.textContent = storedValue !== null && pendingOperator
     ? `${formatNumber(storedValue)} ${operatorLabel(pendingOperator)}`
     : "\u00a0";
